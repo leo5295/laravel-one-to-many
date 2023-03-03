@@ -14,6 +14,7 @@
         <th scope="col">Title</th>
         <th scope="col">Content</th>
         <th scope="col">Slug</th>
+        <th scope="col">Linguaggio</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
           <td>{{$project->title}}</td>
           <td>{{$project->content}}</td>
           <td>{{$project->slug}}</td>
+          <td>{{$project->type ? $project->type->name : 'senza categoria'}}</td>
         </tr>  
     </tbody>
   </table>
