@@ -6,6 +6,8 @@ use App\Http\controllers\Controller;
 use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
+use App\Models\Project;
+
 
 class TypeController extends Controller
 {

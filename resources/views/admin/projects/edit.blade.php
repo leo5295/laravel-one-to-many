@@ -20,6 +20,14 @@
             <label for="" class="form-label">Modifica descrizione</label>
             <textarea rows="5" class="form-control" id="" aria-describedby="" name="content">{{old('content') ?? $project['content']}}</textarea>
         </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Linguaggio utilizzato</label>
+            <select name="type_id" id="type_id">
+              @foreach ($types as $item)
+              <option value="{{ $item->id}}" {{$item->id == old('type_id', $project->type_id) ? 'selected' : ''}}>{{$item->name}}</option> 
+              @endforeach
+            </select>
+        </div>
     
         <div class="form-group">
     
