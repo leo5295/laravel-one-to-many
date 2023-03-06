@@ -2,6 +2,17 @@
 
 @section('content')
 <div>
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+</div>
+<div>
     <a href="{{route('admin.projects.index')}}">
         <button class="btn btn-secondary m-3">
             <i class="fa-solid fa-arrow-left"></i>

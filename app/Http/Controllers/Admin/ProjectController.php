@@ -42,7 +42,7 @@ class ProjectController extends Controller
     {
         // Project::create($request->all());
         // return redirect('/admin.projects.index');
-        $new = $request->all();
+        $new = $request->validated();
         $slug = Project::generateSlug($request->title);
         $new['slug'] = $slug;
         Project::create($new);
@@ -81,9 +81,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        $data = $request->all();
-        $slug = Project::generateSlug($request->title);
-        $new['slug'] = $slug;
+        $data = $request->validated();
+        $slug = Project::generateSlug($data['title']);
+        $data['slug'] = $slug;
         $project->update($data);
         return redirect()->route('admin.projects.index');
     }
